@@ -1,3 +1,4 @@
+
 // app.js
 
 var express = require('express');
@@ -9,7 +10,8 @@ var app = express();
 
 // Set up mongoose connection
 var mongoose = require('mongoose');
-var dev_db_url = 'mongodb://someuser:abcd1234@ds123619.mlab.com:23619/productstutorial';
+// mongodb+srv://test:<password>@cluster0-bs8m2.mongodb.net/test?retryWrites=true
+var dev_db_url = 'mongodb+srv://test:test@cluster0-bs8m2.mongodb.net/test?retryWrites=true';
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;

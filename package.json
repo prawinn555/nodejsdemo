@@ -1,7 +1,7 @@
 {
   "name": "productsapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "hello",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,8 +9,16 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.3",
-    "mongoose": "^5.0.11"
-  }
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.5.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prawinn555/nodejsdemo.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prawinn555/nodejsdemo/issues"
+  },
+  "homepage": "https://github.com/prawinn555/nodejsdemo#readme"
 }
