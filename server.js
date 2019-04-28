@@ -10,9 +10,8 @@ var swaggerDefinition = {
   info: {
     title: 'Node Swagger API',
     version: '1.0.0',
-    description: 'lets try',
+    description: 'Let s try',
   },
-  host: 'localhost',
   basePath: '/',
 };
 
@@ -31,7 +30,10 @@ app.get('/swagger.json', function(req, res) {
 
 // Set up mongoose connection
 var mongoose = require('mongoose');
-// mongodb+srv://test:<password>@cluster0-bs8m2.mongodb.net/test?retryWrites=true
+// avoir deprecated method
+mongoose.set('useFindAndModify', false);
+
+// database URL
 var dev_db_url = 'mongodb+srv://test:test@cluster0-bs8m2.mongodb.net/test?retryWrites=true';
 var mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB);
@@ -39,9 +41,14 @@ mongoose.Promise = global.Promise;
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+// the body of the request POST/PUT will be parsed as json.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+
+// map paths to different functions
 app.use('/', router);
+
+// search static files in 'static' directories
 app.use(express.static('static'));
 
 var port = 1234;
